@@ -56,7 +56,7 @@ pipeline {
         stage('DEPLOY APP') {
             steps {
                 echo 'deploying app...'
-                sh 'docker run -p 5001:9002 onelazyguy/jenkins:0.0.4-SNAPSHOT'
+                sh 'docker run -d -p 5001:9002 onelazyguy/jenkins:0.0.4-SNAPSHOT'
             }
         }
     }
