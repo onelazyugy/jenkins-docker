@@ -26,7 +26,6 @@ pipeline {
             steps {
                 echo 'building...'
                 sh 'mvn clean install -X'
-                sh 'ls ll'
                 echo 'building SUCCESS'
             }
 
