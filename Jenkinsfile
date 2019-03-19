@@ -6,7 +6,7 @@ pipeline {
         string(name: 'VERSION', defaultValue: "v0.0.0+00", description: 'The app version being deployed')
         string(name: 'CR', defaultValue: "CHGXXXXXXX", description: 'The change request number')
         string(name: 'USERNAME', defaultValue: "username", description: 'Enter user name')
-        string(name: 'PASSWORD', defaultValue: "password", description: 'Enter password')
+        password(name: 'PASSWORD', defaultValue: "password", description: 'Enter password')
     }
 
     environment {
