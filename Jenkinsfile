@@ -18,7 +18,8 @@ pipeline {
         stage('BUILD') {
             steps {
                 echo 'building...'
-                sh 'pwd'
+                sh 'mvn clean install -X'
+                sh 'building SUCCESS'
             }
 
         }
