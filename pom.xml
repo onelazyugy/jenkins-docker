@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.viet.le</groupId>
 	<artifactId>jenkins</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.3-SNAPSHOT</version>
 	<name>jenkins</name>
 	<description>Demo project for Spring Boot</description>
 
