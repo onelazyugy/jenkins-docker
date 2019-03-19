@@ -48,9 +48,9 @@ pipeline {
             steps {
                 echo 'pushing to dockerhub...'
                 sh 'docker login'
-                sh 'docker tag jenkins onelazyguy/jenkins:0.0.1-SNAPSHOT'
+                sh 'docker tag jenkins onelazyguy/jenkins:0.0.2-SNAPSHOT'
                 sh 'docker image ls'
-                sh 'docker push onelazyguy/jenkins:0.0.1-SNAPSHOT'
+                sh 'docker push onelazyguy/jenkins:0.0.2-SNAPSHOT'
             }
         }
     }
