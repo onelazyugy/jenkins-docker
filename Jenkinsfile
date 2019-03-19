@@ -17,8 +17,7 @@ pipeline {
     stages {
         stage('PRE-BUILD') {
             steps {
-                echo 'what is USERNAME?'
-                sh 'echo ${USERNAME}'
+                sh 'echo username: ${USERNAME} pass: ${PASSWORD}'
                 echo 'should print already'
             }
 
