@@ -25,6 +25,7 @@ pipeline {
         stage('DOCKERIZE') {
             steps {
                 echo 'dockerizing...'
+                docker -v
             }
         }
     }
