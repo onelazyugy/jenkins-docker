@@ -48,15 +48,15 @@ pipeline {
             steps {
                 echo 'pushing to dockerhub...'
                 sh 'docker login'
-                sh 'docker tag jenkins onelazyguy/jenkins:0.0.3-SNAPSHOT'
+                sh 'docker tag jenkins onelazyguy/jenkins:0.0.4-SNAPSHOT'
                 sh 'docker image ls'
-                sh 'docker push onelazyguy/jenkins:0.0.3-SNAPSHOT'
+                sh 'docker push onelazyguy/jenkins:0.0.4-SNAPSHOT'
             }
         }
         stage('DEPLOY APP') {
             steps {
                 echo 'deploying app...'
-                sh 'docker run -p 5001:9002 onelazyguy/jenkins:0.0.3-SNAPSHOT'
+                sh 'docker run -p 5001:9002 onelazyguy/jenkins:0.0.4-SNAPSHOT'
             }
         }
     }
