@@ -36,5 +36,14 @@ pipeline {
                 sh 'docker -v'
             }
         }
+        stage('PUSH TO DOCKERHUB') {
+            steps {
+                echo 'pushing to dockerhub...'
+                sh 'docker login'
+                sh 'docker tag docker-demo onelazyguy/docker-springboot-demo:0.0.3-SNAPSHOT'
+                sh 'docker image ls'
+                sh 'docker push onelazyguy/docker-springboot-demo:0.0.3-SNAPSHOT'
+            }
+        }
     }
 }
