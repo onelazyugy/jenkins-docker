@@ -1,20 +1,29 @@
 #!/usr/bin/env groovy
 
 pipeline {
-    agent any
-    triggers {
-        pollSCM('* * * * *')
+    agent { node { label 'RHEL||master' } }
+    parameters {
+        string(name: 'VERSION', defaultValue: "v0.0.0+00", description: 'The app version being deployed')
+        string(name: 'CR', defaultValue: "CHGXXXXXXX", description: 'The change request number')
+        string(name: 'USERNAME', defaultValue: "username", description: 'Enter user name')
+        string(name: 'PASSWORD', defaultValue: "password", description: 'Enter password')
+    }
+
+    environment {
+        USERNAME="${params.USERNAME}"
+        PASSWORD="${params.PASSWORD}"
     }
 
     stages {
-        stage('Build') {
+        stage('BUILD') {
             steps {
                 echo 'building...'
             }
+
         }
-        stage('Deploy') {
+        stage('DOCKERIZE') {
             steps {
-                echo 'deploying...'
+                echo 'dockerizing...'
             }
         }
     }
