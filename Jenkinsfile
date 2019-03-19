@@ -15,6 +15,13 @@ pipeline {
     }
 
     stages {
+        stage('PRE-BUILD') {
+            steps {
+                echo 'what is USERNAME? $USERNAME'
+                echo 'what is second USERNAME? ${USERNAME}'
+            }
+
+        }
         stage('BUILD') {
             steps {
                 echo 'building...'
