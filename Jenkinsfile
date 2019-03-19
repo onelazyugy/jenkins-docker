@@ -41,15 +41,16 @@ pipeline {
             steps {
                 echo 'dockerizing...'
                 sh 'docker -v'
+                sh 'docker build -t jenkins .'
             }
         }
         stage('PUSH TO DOCKERHUB') {
             steps {
                 echo 'pushing to dockerhub...'
                 sh 'docker login'
-                sh 'docker tag docker-demo onelazyguy/docker-springboot-demo:0.0.3-SNAPSHOT'
+                sh 'docker tag jenkins onelazyguy/jenkins:0.0.1-SNAPSHOT'
                 sh 'docker image ls'
-                sh 'docker push onelazyguy/docker-springboot-demo:0.0.3-SNAPSHOT'
+                sh 'docker push onelazyguy/jenkins:0.0.1-SNAPSHOT'
             }
         }
     }
