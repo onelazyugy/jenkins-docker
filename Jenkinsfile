@@ -18,6 +18,7 @@ pipeline {
         stage('BUILD') {
             steps {
                 echo 'building...'
+                sh 'echo username ----> $USERNAME pass ----> $PASSWORD'
             }
 
         }
