@@ -19,7 +19,14 @@ pipeline {
             steps {
                 echo 'building...'
                 sh 'mvn clean install -X'
-                sh 'building SUCCESS'
+                echo 'building SUCCESS'
+            }
+
+        }
+        stage('TEST') {
+            steps {
+                echo 'running test...'
+                sh 'mvn test'
             }
 
         }
