@@ -11,7 +11,7 @@ VOLUME /tmp
 EXPOSE 8080
 
 # The application's jar file
-ARG JAR_FILE=target/jenkins-0.0.4-SNAPSHOT.jar
+ARG JAR_FILE=target/jenkins-0.0.5-SNAPSHOT.jar
 
 # Add the application's jar to the container
 ADD ${JAR_FILE} jenkins.jar
